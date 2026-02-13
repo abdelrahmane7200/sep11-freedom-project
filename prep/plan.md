@@ -29,8 +29,17 @@
 
 #### Beyond MVP
 
-- [ ] Task
-  - [ ] Subtask
+- [ ] NodeJs Server
+  - This might not be possible, but I will keep it here for now. If as I learn more I learn I learn there are physical limitations to this, it will be crossed out.
+  - [ ] Serve a simple HTML page from ESP32
+  - [ ] Add endpoint /api/alarms (GET)
+  - [ ] Add endpoint /api/alarms (POST)
+  - [ ] Add endpoint /api/alarms/:id (DELETE)
+  - [ ] Add UI to alarms list, and UI to do all actions of endpoints
+- [ ] Save alarms persistently (add onto what's right above this)
+  - [ ] Store alarms in NVS
+  - [ ] Load alarms on boot
+  - [ ] Validae inpt and avoid corrupt saves
 
 
 <!-- EXAMPLE
