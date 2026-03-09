@@ -49,6 +49,11 @@
   * Tried to write code in pure C++ (semi-pass, got better stripes * * updates, colors were still gray sided)
   * Tried a different screen with pure C++ and externs of C (passed!)
 
+### 3/6/26:
+**Challenge:** Editing the screen takes too long to load with new changes
+- Tried p5.js -- Difficult, not the same functions
+- Found open source app Lopaka -- Worked, turns directly into my library's functions
+
 ### Link to a Google Document that's always up-to-date: [here](https://docs.google.com/document/d/1ADYTtIP4kiuP5G-rpsJ8q7C5ST4qQUjShYBPFLXOaI4/edit?usp=sharing)
 
 
