@@ -54,9 +54,10 @@
 - Tried p5.js -- Difficult, not the same functions
 - Found open source app Lopaka -- Worked, turns directly into my library's functions
 
+### 3/23/26:
+I have been trying to setup my files in an organized and easy to understand manner so I can edit them easily for debugs
+
 ### Link to a Google Document that's always up-to-date: [here](https://docs.google.com/document/d/1ADYTtIP4kiuP5G-rpsJ8q7C5ST4qQUjShYBPFLXOaI4/edit?usp=sharing)
-
-
 
 <!--
 * Links you used today (websites, videos, etc)
