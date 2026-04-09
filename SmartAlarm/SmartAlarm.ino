@@ -5,15 +5,15 @@
 #include <set>
 #include <TFT_eSPI.h>
 
-// #include "secrets.h"
+#include "secrets.h"
 
 #include "PrintOnScreen.hpp"
 #include "Weather.hpp"
 #include "Alarms.hpp"
 #include "TimeAPI.hpp"
 
-const char* SSID = "wifih";
-const char* PASSWORD = "hellohello";
+// const char* SSID = "wifih";
+// const char* PASSWORD = "hellohello";
 
 TFT_eSPI tft = TFT_eSPI();
 PrintOnScreen screenPrinting(tft);
@@ -42,6 +42,9 @@ void setup() {
   Serial.println("Connected!");
   Serial.println("IP Address: ");
   Serial.print(WiFi.localIP());
+
+  // Initialize time
+  initTime();
 
   // Screen stuff
   Serial.println("Waiting 3 seconds before starting (screen)");
