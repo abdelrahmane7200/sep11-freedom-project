@@ -25,6 +25,23 @@ const int BUZZER_PIN = 19;
 Weather weather;
 Alarms alarms;
 
+// Date
+String currentDate = "";
+
+String buildDateString() {
+    struct tm timeinfo;
+    if (!getLocalTime(&timeinfo)) return "";
+    const char* days[]   = { "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday" };
+    const char* months[] = { "January","February","March","April","May","June",
+                              "July","August","September","October","November","December" };
+    String result = days[timeinfo.tm_wday];
+    result += ", ";
+    result += months[timeinfo.tm_mon];
+    result += " ";
+    result += String(timeinfo.tm_mday);
+    return result;
+}
+
 void setup() {
   // Baud #
   Serial.begin(115200);
@@ -93,6 +110,7 @@ String currentTime = "";
 void loop() {
   if (millis() - lastTimeUpdate > timeInterval) {
     currentTime = getCurrentTime();
+    currentDate = buildDateString();
     Serial.println(currentTime);
     lastTimeUpdate = millis();
   }
@@ -138,9 +156,29 @@ void loop() {
   // }
   
   if (millis() - lastBackgroundUpdate > backgroundInterval) {
+    weather.updateCurrentHourIndex(currentTime);
+
+    float forecastTemps[6];
+    String forecastHours[6];
+    for (int i = 0; i < 6; i++) {
+        forecastTemps[i] = weather.getTemp(i);
+        forecastHours[i] = weather.getHourLabel(i);
+    }
+
     screenPrinting.printBackground();
     screenPrinting.printTime(currentTime);
+    screenPrinting.printDate(currentDate);
+    screenPrinting.printWeather(
+        weather.getCurrentTemp(),
+        weather.getCurrentCondition(),
+        "Brooklyn, NY"
+    );
+    screenPrinting.printForecast(forecastTemps, forecastHours);
     alarms.handleScreenForAlarms(screenPrinting);
+    screenPrinting.printStatusBar(
+        WiFi.status() == WL_CONNECTED,
+        true
+    );
 
     lastBackgroundUpdate = millis();
   }
