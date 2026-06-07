@@ -1,5 +1,6 @@
 # SEP11 Freedom Project
-by **X**
+by **Abdel Ebed**
+Go [Here](https://github.com/skele6011/Smart-Alarm-Clock) to see the start of the process the project.
 
 ## Context
 I am a student at [HSTAT](https://www.hstat.org/) in the [Software Engineering Program](https://hstatsep.github.io/). The "Freedom Project" for SEP11 is a year-long project all about making something using JavaScript along with a third-party JS tool.
